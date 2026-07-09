@@ -1,0 +1,97 @@
+/* style.css - Library Card Catalog Theme */
+:root {
+    --forest-green: #1B3022;
+    --cream: #F5F2E7;
+    --gold: #C5A059;
+    --dark-text: #2C2C2C;
+    --border-color: #D1C7A7;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--dark-text);
+    font-family: 'Courier Prime', monospace; /* Classic typewriter feel */
+    margin: 0;
+    padding: 0;
+}
+
+#main-header {
+    background-color: var(--forest-green);
+    color: var(--gold);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--gold);
+}
+
+.chuka-logo {
+    width: 120px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+}
+
+#navbar {
+    background: var(--forest-green);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#navbar button {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+}
+
+#navbar button:hover {
+    background: var(--gold);
+    color: var(--forest-green);
+}
+
+.card-catalog {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    box-shadow: 5px 5px 0px var(--border-color);
+    padding: 30px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-left: 15px solid var(--forest-green); /* Book spine effect */
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--border-color);
+    background: #FAFAFA;
+    font-family: 'Courier Prime', monospace;
+}
+
+.btn-gold {
+    background-color: var(--gold);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-gold:hover {
+    background-color: #A38445;
+}
+
+.shelf {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(27, 48, 34, 0.05);
+    border-radius: 8px;
+}
