@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuka Student Library | Referral System</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for the Card Catalog Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Preloader / Logo Section -->
+    <header id="main-header">
+        <div class="logo-container">
+            <!-- Placeholder for Chuka Logo -->
+            <img src="https://via.placeholder.com/150?text=CHUKA+LOGO" alt="Chuka University Logo" class="chuka-logo">
+            <h1>Chuka Student Library</h1>
+            <p class="tagline">Curated Knowledge & Community Spotlight</p>
+        </div>
+    </header>
+
+    <nav id="navbar">
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('library')">The Stacks</button>
+        <button onclick="showSection('marketplace')">Marketplace</button>
+        <button onclick="showSection('rewards')">Rewards</button>
+    </nav>
+
+    <main class="container">
+        
+        <!-- SECTION 1: HOME & REGISTRATION -->
+        <section id="home" class="content-section">
+            <div class="card-catalog">
+                <h2>Join the Library</h2>
+                <p>New members get a <strong>1-week free trial</strong>! [4]</p>
+                <form id="registrationForm">
+                    <input type="text" id="regName" placeholder="Full Name" required>
+                    <input type="tel" id="regPhone" placeholder="Phone (M-Pesa)" required>
+                    <input type="email" id="regEmail" placeholder="Email Address" required>
+                    <input type="text" id="regCourse" placeholder="Course of Study" required>
+                    <input type="text" id="regRef" placeholder="Referral Code (Optional)">
+                    <textarea id="mpesaMsg" placeholder="Paste M-Pesa Message (for renewals)"></textarea>
+                    <button type="submit" class="btn-gold">Sign Up / Renew</button>
+                </form>
+                <p class="footer-note">Pay to Till: <strong>6817863</strong> [5]</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: THE LIBRARY (GATED CONTENT) -->
+        <section id="library" class="content-section" style="display:none;">
+            <div id="auth-check">
+                <h2>Access the Stacks</h2>
+                <input type="tel" id="loginPhone" placeholder="Enter Registered Phone">
+                <button onclick="checkAccess()" class="btn-gold">Unlock Content</button>
+            </div>
+
+            <div id="gated-content" style="display:none;">
+                <div class="shelf">
+                    <h3>Digital Books</h3>
+                    <div id="booksGrid"></div> <!-- Books rendered here from Sheets [6, 7] -->
+                </div>
+                <div class="shelf">
+                    <h3>Daily Trends</h3>
+                    <div id="trendsList"></div> <!-- Headlines rendered here [7] -->
+                </div>
+                <div class="shelf">
+                    <h3>Great Minds of Chuka</h3>
+                    <div id="mindsSpotlight"></div> <!-- Weekly spotlight [7] -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: MARKETPLACE (VENDORS) -->
+        <section id="marketplace" class="content-section" style="display:none;">
+            <h2>Campus Marketplace</h2>
+            <div id="shopsGrid"></div> <!-- Vendor shops listed here -->
+            <hr>
+            <div class="card-catalog">
+                <h3>Open Your Own Shop</h3>
+                <p>Pay your setup fee to Till 6817863 and register your digital storefront here.</p>
+                <button onclick="openShopModal()" class="btn-gold">Register My Shop</button>
+            </div>
+        </section>
+
+        <!-- SECTION 4: REWARDS & REFERRALS -->
+        <section id="rewards" class="content-section" style="display:none;">
+            <div class="card-catalog">
+                <h2>My Rewards</h2>
+                <div class="points-display">
+                    <p>Referral Points: <span id="userPoints">0</span></p>
+                    <p>Referral Code: <span id="userRefCode">----</span></p>
+                </div>
+                <p>Earn <strong>100 points</strong> per referral! [4]</p>
+                <div class="redeem-actions">
+                    <button onclick="redeemPoints('Activation')" class="btn-green">Redeem for 1 Week Access</button>
+                    <button onclick="redeemPoints('Cash')" class="btn-gold">Redeem for 10 KSH</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Chuka Student Library. All academic content is for in-browser reading only. [7]</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
